@@ -22,7 +22,7 @@ class Student(models.Model):
     student_id = models.CharField(max_length=9, blank=True, null=True)
 
     def __str__(self):
-        return self.name
+        return self.student_id
 
 
 class Reg(models.Model):
