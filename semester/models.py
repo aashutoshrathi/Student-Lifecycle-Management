@@ -27,6 +27,7 @@ class Course(models.Model):
     semester = models.ForeignKey(Semester, on_delete=models.CASCADE)
     name = models.CharField(max_length=30, blank=True, null=True)
     code = models.CharField(max_length=6, blank=True, null=True)
+    days_given = models.IntegerField(max_length=6, blank=True, null=True)
 
     def __str__(self):
         return self.code + " : " + self.name

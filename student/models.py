@@ -22,13 +22,14 @@ class Student(models.Model):
     student_id = models.CharField(max_length=9, blank=True, null=True)
 
     def __str__(self):
-        return self.name
+        return self.student_id
 
 
 class Reg(models.Model):
     student = models.ForeignKey(Student, on_delete=models.CASCADE)
     course_code = models.CharField(max_length=10, blank=True, null=True)
     attendance = models.IntegerField(blank=True, null=True)
+    grade = models.CharField(max_length=4, blank=True, null=True)
 
     def __str__(self):
         return self.course_code
