@@ -13,13 +13,16 @@ class Student(models.Model):
         ('o', 'Other'),
     )
 
-    MARITAL_STATUS = (
-        ('m', 'Married'),
-        ('u', 'Unmarried'),
-    )
-
     name = models.CharField(max_length=30, blank=True, null=True)
+    contact_number = models.CharField(max_length=10, blank=True, null=True)
+    guardians_number = models.CharField(max_length=10, blank=True, null=True)
+    dob = models.DateField(blank=True, null=True)
+    address = models.TextField(max_length=100, blank=True, null=True)
+    blood_group = models.CharField(max_length=3, blank=True, null=True)
     student_id = models.CharField(max_length=9, blank=True, null=True)
+    application_number = models.CharField(max_length=9, blank=True, null=True)
+    programme = models.CharField(max_length=9, blank=True, null=True)
+    gender = models.CharField(max_length=1, blank=True, null=True, choices=GENDER_CHOICES)
 
     def __str__(self):
         return self.student_id
