@@ -24,10 +24,31 @@ class Semester(models.Model):
 
 
 class Course(models.Model):
+    class Meta:
+        verbose_name = 'Course'
+        verbose_name_plural = 'Courses'
+
     semester = models.ForeignKey(Semester, on_delete=models.CASCADE)
     name = models.CharField(max_length=30, blank=True, null=True)
     code = models.CharField(max_length=6, blank=True, null=True)
-    days_given = models.IntegerField(max_length=6, blank=True, null=True)
+    days_given = models.IntegerField(blank=True, null=True)
+    ref_books = models.TextField(max_length=500, blank=True, null=True)
+    is_elective = models.BooleanField(default=False)
 
     def __str__(self):
         return self.code + " : " + self.name
+
+
+'''
+class Quiz:
+    class Meta:
+        verbose_name = 'Quiz'
+        verbose_name_plural = 'Quizes'
+
+    course = models.ForeignKey(Course, on_delete=models.CASCADE)
+    title = models.CharField(max_length=50, blank=True, null=True)
+    max_marks = models.IntegerField(max_length=5, blank=True, null=True)
+
+    def __str__(self):
+        return self.title
+'''

@@ -25,7 +25,7 @@ class Student(models.Model):
         return self.student_id
 
 
-class Reg(models.Model):
+class RegCourse(models.Model):
     student = models.ForeignKey(Student, on_delete=models.CASCADE)
     course_code = models.CharField(max_length=10, blank=True, null=True)
     attendance = models.IntegerField(blank=True, null=True)
@@ -33,3 +33,8 @@ class Reg(models.Model):
 
     def __str__(self):
         return self.course_code
+
+
+class CourseQuiz(models.Model):
+    course = models.ForeignKey(RegCourse, on_delete=models.CASCADE)
+    marks_obtained = models.CharField(max_length=6, blank=True, null=True)
