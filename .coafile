@@ -1,0 +1,9 @@
+# coafile for this project
+# please add more settings beneath
+# Local fixing
+# coala --apply-patches -n
+
+# python lint
+[pep8]
+files = **/*.py
+bears = PEP8Bear
