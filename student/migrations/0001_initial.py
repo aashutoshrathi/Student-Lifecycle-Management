@@ -15,28 +15,29 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='Course',
+            name='Reg',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(blank=True, max_length=30, null=True)),
-                ('code', models.CharField(blank=True, max_length=6, null=True)),
+                ('course_code', models.CharField(blank=True, max_length=10, null=True)),
+                ('attendance', models.IntegerField(blank=True, default=0, null=True)),
             ],
         ),
         migrations.CreateModel(
-            name='Semester',
+            name='Student',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(blank=True, choices=[('sem1', 'Semester I'), ('sem2', 'Semester II'), ('sem3', 'Semester III'), ('sem4', 'Semester IV'), ('sem5', 'Semester V'), ('sem6', 'Semester VI'), ('sem7', 'Semester VII'), ('sem8', 'Semester VIII')], default='Semester I', max_length=15, null=True)),
+                ('name', models.CharField(blank=True, max_length=30, null=True)),
+                ('student_id', models.CharField(blank=True, max_length=9, null=True)),
             ],
             options={
                 'ordering': ('name',),
-                'verbose_name_plural': 'Semesters',
-                'verbose_name': 'Semester',
+                'verbose_name_plural': 'Students',
+                'verbose_name': 'Student',
             },
         ),
         migrations.AddField(
-            model_name='course',
-            name='semester',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='semester.Semester'),
+            model_name='reg',
+            name='student',
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='student.Student'),
         ),
     ]
