@@ -1,0 +1,14 @@
+language: python
+python:
+  - 3.5.2
+services:
+  - mysql
+env:
+  -DJANGO=1.11 DB=sqlite3
+install:
+  - pip install -r requirements.txt
+
+script:
+  - python manage.py makemigrations
+  - python manage.py migrate
+  - python manage.py test
