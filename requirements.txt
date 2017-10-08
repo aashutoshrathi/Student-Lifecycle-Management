@@ -4,3 +4,4 @@ requests==2.18.3
 djangorestframework==3.6.3
 pytest-django
 pytest
+django-countries

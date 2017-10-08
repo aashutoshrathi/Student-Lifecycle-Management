@@ -25,7 +25,7 @@ SECRET_KEY = '0b!^1^++u4p6(&07)3-4cur+-ie#rn)--=x%3%c@ht3)@3byqr'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'portal.apps.PortalConfig',
     'semester.apps.SemesterConfig',
     'student.apps.StudentConfig',
+    'django_countries',
 ]
 
 MIDDLEWARE = [
