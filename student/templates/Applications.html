@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Student Lifecycle Management</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+  <nav class="light-blue lighten-1" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">IIITV</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="StudentProfile.html">Student Details</a></li>
+        <li><a href="AcademicDetails.html">Academics Details</a></li>
+        <li><a href="Financials.html">Fee Status</a></li>
+        <li><a href="Applications.html">Submit Application</a></li>
+        <li><a href="#">Application Status</a></li>
+        <li><a href="#">Event Calendar</a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="side-nav">
+        <li><a href="StudentProfile.html">Student Details</a></li>
+        <li><a href="AcademicDetails.html">Academics Details</a></li>
+        <li><a href="Financials.html">Fee Status</a></li>
+        <li><a href="Applications.html">Submit Application</a></li>
+        <li><a href="#">Application Status</a></li>
+        <li><a href="#">Event Calendar</a></li>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+<!--Nav Bar-->
+	<div class="row">
+
+      <div class="col s3">
+        <!-- Navigation panel -->
+      <ul style="width:250px; margin-top:65px;" class="side-nav fixed">
+  		  <li class="withdraw-nav"><a href="#">Withdrawal Reason</a></li>
+     	  <li class="certificate-nav"><a href="#">Apply for certificates</a></li>
+      </ul>
+      </div>
+
+      <div class="col s9">
+      <!-- Page content  -->
+
+	  <div class="row withdraw-form">
+  		<form class="col s12">
+  		  <div class="row s2">
+    			<div class="input-field col s12">
+    			  <input id="first_name" type="text" class="validate">
+    			  <label for="first_name">Name</label>
+    			</div>
+  		  </div>
+        <div class="row">
+		       <div class="input-field col s12">
+             <textarea id="textarea1" class="materialize-textarea"></textarea>
+             <label for="textarea1">Reason</label>
+          </div>
+        </div>
+  	  <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+  		    <i class="material-icons right">send</i>
+  	  </button>
+  	  </form>
+	  </div>
+    <div class="certificates hide">
+     <div class="dropmemu col s6">
+  	  <select class="browser-default" style="margin:10px; margin-top:50px">
+    		<option value="" disabled selected>-- Select Classification --</option>
+    		<option value="1">Bonafide Certificate</option>
+    		<option value="2">Duplicate Identity Card</option>
+    		<option value="3">Duplicate Marksheet</option>
+    		<option value="4">Transfer Certicate</option>
+    		<option value="5">No Objection Certificate</option>
+  	  </select>
+     </div>
+     <div class="col s6">
+   	<select class="browser-default" style="margin:10px; margin-top:50px">
+  		<option value="" disabled selected>-- Select Reason --</option>
+  		<option value="1">Apply for Passport</option>
+  		<option value="2">Apply for Intership</option>
+  		<option value="3">Apply for Higher Studies</option>
+  		<option value="4">Applying for VISA</option>
+  		<option value="5">Applying for conference</option>
+	  </select>
+     </div>
+     <button class="btn waves-effect waves-light right" style="margin:20px" type="submit" name="action">Submit
+		<i class="material-icons right">send</i>
+	  </button>
+	</div>
+      </div>
+    </div>
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+  <script src="js/applications.js">
+
+  </script>
+  </body>
+</html>
