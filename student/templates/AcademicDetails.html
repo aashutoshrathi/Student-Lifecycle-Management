@@ -61,7 +61,7 @@
                 <td>Semester</td>
                 <td>Credits</td>
               </tr>
-              {% for course in course_detail %}
+              {% for percent, absent, course, grade in course_detail %}
               <tr>
                 <td>{{ course.code }}</td>
                 <td>{{ course.name }}</td>
@@ -88,7 +88,7 @@
                 <td>Days Absent</td>
                 <td>Attendance</td>
               </tr>
-              {% for percent,absent,course,ignore in course_detail %}
+              {% for percent,absent,course,grade in course_detail %}
               <tr>
                 <td>{{ student_profile.academic_year }}</td>
                 <td>{{ course.name }}</td>
@@ -113,7 +113,7 @@
                 <td>Subject</td>
                 <td>Grade</td>
               </tr>
-            {% for ignore,ignore,course,grade in course_detail %}
+            {% for percent,absent,course,grade in course_detail %}
             <tr>
             <td>{{ course.code }}</td>
             <td>{{ course.name }}</td>
