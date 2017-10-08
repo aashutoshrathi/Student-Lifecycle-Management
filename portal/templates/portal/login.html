@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Student Lifecycle Management</title>
+{% load staticfiles %}
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="{% static 'portal/css/materialize.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="{% static 'portal/css/style.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+  <nav class="light-blue lighten-1" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Logo</a>
+    </div>
+  </nav>
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <br><br>
+      <h1 class="header center orange-text">Student Lifecycle Management</h1>
+      <div class="row center">
+        <h5 class="header col s12 light">An app to manage students lifecycle studying in colleges</h5>
+      </div>
+
+      <div class="row">
+    	<form class="col s12">
+      		<div class="row">
+        		<div class="input-field col s6">
+          		<i class="material-icons prefix">account_circle</i>
+          		<input id="icon_prefix" type="text" class="validate">
+          		<label for="icon_prefix">Roll No</label>
+        		</div>
+      		<div class="input-field col s6">
+          	<i class="material-icons prefix">done</i>
+          	<input id="icon_telephone" type="tel" class="validate">
+          	<label for="icon_telephone">Password</label>
+        	</div>
+      	</div>
+    	</form>
+  	</div>
+      <div class="row center">
+        <a href="#" id="download-button" class="btn-large waves-effect waves-light orange">Login</a>
+      </div>
+      <br><br>
+
+    </div>
+  </div>
+
+
+  <div class="container">
+    <div class="section">
+
+      <!--   Icon Section   -->
+      <div class="row">
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center light-blue-text"><i class="material-icons">flash_on</i></h2>
+            <h5 class="center">Get personal Details</h5>
+
+            <p class="light">Get all the details you submitted in college.</p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center light-blue-text"><i class="material-icons">group</i></h2>
+            <h5 class="center">Know Your Attendance</h5>
+
+            <p class="light">Know your attendance on-the-go without hassle.</p>
+          </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="icon-block">
+            <h2 class="center light-blue-text"><i class="material-icons">settings</i></h2>
+            <h5 class="center">Know your grades</h5>
+
+            <p class="light">Know your grades for all subjects anytime.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <br><br>
+	</div>
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="{% static 'portal/js/materialize.js' %}"></script>
+  <script src="{% static 'portal/js/init.js' %}"></script>
+
+  </body>
+</html>
