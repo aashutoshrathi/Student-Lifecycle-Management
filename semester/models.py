@@ -18,6 +18,7 @@ class Semester(models.Model):
         ('VIII', 'Semester VIII'),
     )
     name = models.CharField(max_length=15, choices=STATUS_CHOICES, default='Semester I', blank=True, null=True)
+    cpi = models.CharField(max_length=10, blank=True, null=True)
 
     def __str__(self):
         return self.name

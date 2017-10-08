@@ -5,3 +5,4 @@ djangorestframework==3.6.3
 pytest-django
 pytest
 django-countries
+Pillow
