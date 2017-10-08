@@ -24,10 +24,11 @@ class Teacher(models.Model):
     state_of_origin = models.CharField(max_length=20, default='Rajasthan', null=True)
     gender = models.CharField(max_length=1, blank=True, null=True, choices=GENDER_CHOICES)
     email = models.CharField(max_length=100, blank=True, null=True)
-    qualifications = models.TextField(max_length=100, blank=True, null=True)
-    alma_mater = models.CharField(max_length=100, blank=True, null=True)
-    areas_of_interest = models.TextField(max_length=1000, blank=True, null=True)
-    publications = models.TextField(max_length=100, blank=True, null=True)
+    qualifications = models.TextField(max_length=10000, blank=True, null=True)
+    alma_mater = models.CharField(max_length=800, blank=True, null=True)
+    areas_of_interest = models.TextField(max_length=5000, blank=True, null=True)
+    working_experience = models.TextField(max_length=2000, blank=True, null=True)
+    publications = models.TextField(max_length=10000, blank=True, null=True)
 
     def __str__(self):
         return self.name

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+        <title>Student Lifecycle Management</title>
+        {% load staticfiles %}
+        <!-- CSS  -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="{% static 'portal/css/materialize.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+        <link href="{% static 'portal/css/style.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+    </head>
+<body>
+    <nav class="light-blue lighten-1" role="navigation">
+        <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">IIITV</a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="StudentProfile.html">Student Details</a></li>
+                <li><a href="AcademicDetails.html">Academics Details</a></li>
+                <li><a href="Financials.html">Fee Status</a></li>
+                <li><a href="Applications.html">Submit Application</a></li>
+                <li><a href="#">Application Status</a></li>
+                <li><a href="#">Event Calendar</a></li>
+            </ul>
+
+            <ul id="nav-mobile" class="side-nav">
+                <li><a href="StudentProfile.html">Student Details</a></li>
+                <li><a href="AcademicDetails.html">Academics Details</a></li>
+                <li><a href="Financials.html">Fee Status</a></li>
+                <li><a href="Applications.html">Submit Application</a></li>
+                <li><a href="#">Application Status</a></li>
+                <li><a href="#">Event Calendar</a></li>
+            </ul>
+            <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+        </div>
+    </nav>
+<!--Nav Bar-->
+    <div class="row">
+    <div class="col s3">
+    <!-- Navigation panel -->
+    <ul style="width:250px; margin-top:65px;" class="side-nav fixed">
+        <li class="profile-nav blue-grey leftnav"><a href="#">My Profile</a></li>
+        <li class="courses-nav leftnav"><a href="#">My Courses</a></li>
+    </ul>
+    </div>
+
+    <div class="col s3 teacherimage">
+    <!-- Page content  -->
+        <img src="https://d.wattpad.com/story_parts/131947708/images/13e163bf05e78fa8.jpg" style="max-height: 250px; max-width: 250px; margin-top: 35px;">
+        <h5>{{ teacher.name }}</h5>
+        <h5>{{ teacher.alma_mater }}</h5>
+        <h5>{{ teacher.country }}</h5>
+        <h5>{{ teacher.contact_number }}</h5>
+        <h5>{{ teacher.linked_in }}</h5>
+        <h5>{{ teacher.google_scholars }}</h5>
+        <h5>{{ teacher.email }}</h5>
+    </div>
+
+    <div class="col s6 teacherdetails">
+    <!--Table-->
+    <table class="highlight enroll-detail">
+    <thead>
+      <tr>
+          <th>Academic Profile</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{ teacher.qualifications }}</td>
+        <td></td>
+      </tr>
+    </tbody>
+    <thead>
+      <tr>
+          <th>Research Interests</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{ teacher.alma_mater }}</td>
+        <td></td>
+      </tr>
+    </tbody>
+    <thead>
+      <tr>
+          <th>Work Experience</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{ teacher.working_experience }}</td>
+        <td></td>
+      </tr>
+    </tbody>
+    <thead>
+      <tr>
+          <th>Publications</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{ teacher.publications }}</td>
+        <td></td>
+      </tr>
+    </tbody>
+    <thead>
+      <tr>
+          <th>Contact</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{ teacher.email }}</td>
+        <td></td>
+      </tr>
+    </tbody>
+    </table>
+    </div>
+        <div class="col s9 offset-s3">
+            <table class="highlight bordered courses-details hide">
+            <thead>
+              <tr>
+                  <th>Courses</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Course Code</td>
+                    <td>Course Name</td>
+                    <td>Links</td>
+                </tr>
+                {% for course in all_assigned_courses %}
+                    <tr>
+                        <td>{{ course.course_code }}</td>
+                        <td>{{ course.course_material }}</td>
+                        <td></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!--  Scripts-->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="{% static 'portal/js/materialize.js' %}"></script>
+    <script src="{% static 'portal/js/init.js' %}"></script>
+    <script src="{% static 'portal/js/teacherdetail.js' %}"></script>
+
+</body>
+</html>
