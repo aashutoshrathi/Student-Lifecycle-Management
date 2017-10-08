@@ -28,12 +28,18 @@ class Course(models.Model):
         verbose_name = 'Course'
         verbose_name_plural = 'Courses'
 
+    CLASS_CHOICES = (
+        ('th', 'Theory'),
+        ('lab', 'LAB'),
+    )
     semester = models.ForeignKey(Semester, on_delete=models.CASCADE)
     name = models.CharField(max_length=30, blank=True, null=True)
     code = models.CharField(max_length=6, blank=True, null=True)
     days_given = models.IntegerField(blank=True, null=True)
     ref_books = models.TextField(max_length=500, blank=True, null=True)
     is_elective = models.BooleanField(default=False)
+    credits = models.IntegerField(default=0, blank=True, null=True)
+    classification = models.CharField(max_length=5, default='th', null=True, choices=CLASS_CHOICES)
 
     def __str__(self):
         return self.code + " : " + self.name
