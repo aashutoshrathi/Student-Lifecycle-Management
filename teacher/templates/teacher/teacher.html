@@ -146,8 +146,9 @@
                 {% for course in all_assigned_courses %}
                     <tr>
                         <td>{{ course.course_code }}</td>
-                        <td>{{ course.course_material }}</td>
-                        <td></td>
+                        <td>{{ course.name }}</td>
+                        <td><a href="{% url 'course_view' course.course_code %}">Course details</a></td>
+
                     </tr>
                 {% endfor %}
             </tbody>
