@@ -27,6 +27,7 @@ class Teacher(models.Model):
     qualifications = models.TextField(max_length=100, blank=True, null=True)
     alma_mater = models.CharField(max_length=100, blank=True, null=True)
     areas_of_interest = models.TextField(max_length=1000, blank=True, null=True)
+    working_experience = models.TextField(max_length=500, blank=True, null=True)
     publications = models.TextField(max_length=100, blank=True, null=True)
 
     def __str__(self):
