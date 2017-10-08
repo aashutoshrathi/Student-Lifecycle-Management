@@ -6,6 +6,7 @@
         <title>Student Lifecycle Management</title>
         {% load staticfiles %}
         <!-- CSS  -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link href="{% static 'portal/css/materialize.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
         <link href="{% static 'portal/css/style.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
@@ -35,24 +36,38 @@
     </nav>
 <!--Nav Bar-->
     <div class="row">
-    <div class="col s3">
+    <div class="col s2">
     <!-- Navigation panel -->
-    <ul style="width:250px; margin-top:65px;" class="side-nav fixed">
+    <ul style="width: 250px; margin-top: 65px" class="side-nav fixed">
         <li class="profile-nav blue-grey leftnav"><a href="#">My Profile</a></li>
         <li class="courses-nav leftnav"><a href="#">My Courses</a></li>
     </ul>
     </div>
 
-    <div class="col s3 teacherimage">
+    <div class="col s3 offset-s1 teacherimage">
     <!-- Page content  -->
-        <img src="https://d.wattpad.com/story_parts/131947708/images/13e163bf05e78fa8.jpg" style="max-height: 250px; max-width: 250px; margin-top: 35px;">
-        <h5>{{ teacher.name }}</h5>
-        <h5>{{ teacher.alma_mater }}</h5>
-        <h5>{{ teacher.country }}</h5>
-        <h5>{{ teacher.contact_number }}</h5>
-        <h5>{{ teacher.linked_in }}</h5>
-        <h5>{{ teacher.google_scholars }}</h5>
-        <h5>{{ teacher.email }}</h5>
+
+        <!-- Page content  -->
+        <div class="row">
+        <div class="col s12 m7">
+          <div class="card" style="width: 170%">
+            <div class="card-image">
+              <img src="http://plugins.dreamcss.com/wp-content/uploads/2016/01/Materialize.png">
+              <span class="card-title center-align">Name</span>
+            </div>
+            <div class="card-content">
+				<span class="univ">{{ teacher.alma_mater }}<span class="country">({{ teacher.country }})</span></span>
+            </div>
+            <div class="card-action">
+              <a href="{{ teacher.linked_in }}"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+			  <a href="{{ teacher.google_scholars }}"><i class="fa fa-google" aria-hidden="true"></i></a>
+			  <a href="{{ teacher.email }}"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+              <a href="{{ teacher.contact_number }}"><i class="fa fa-phone" aria-hidden="true"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
 
     <div class="col s6 teacherdetails">
