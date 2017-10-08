@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'portal.apps.PortalConfig',
     'semester.apps.SemesterConfig',
     'student.apps.StudentConfig',
+    'django_countries',
 ]
 
 MIDDLEWARE = [
