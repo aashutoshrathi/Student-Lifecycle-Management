@@ -38,17 +38,24 @@
     <div class="col s3">
     <!-- Navigation panel -->
     <ul style="width:250px; margin-top:65px;" class="side-nav fixed">
-    <li class="admission-nav"><a href="#">My Profile</a></li>
-    <li class="exam-nav"><a href="#">My Courses</a></li>
+        <li class="profile-nav blue-grey leftnav"><a href="#">My Profile</a></li>
+        <li class="courses-nav leftnav"><a href="#">My Courses</a></li>
     </ul>
     </div>
 
-    <div class="col s3">
+    <div class="col s3 teacherimage">
     <!-- Page content  -->
-    <img src="../../../Downloads/596680.jpg" style="max-height: 250px; max-width: 250px; margin-top: 35px;">
+        <img src="https://d.wattpad.com/story_parts/131947708/images/13e163bf05e78fa8.jpg" style="max-height: 250px; max-width: 250px; margin-top: 35px;">
+        <h5>{{ teacher.name }}</h5>
+        <h5>{{ teacher.alma_mater }}</h5>
+        <h5>{{ teacher.country }}</h5>
+        <h5>{{ teacher.contact_number }}</h5>
+        <h5>{{ teacher.linked_in }}</h5>
+        <h5>{{ teacher.google_scholars }}</h5>
+        <h5>{{ teacher.email }}</h5>
     </div>
 
-    <div class="col s6">
+    <div class="col s6 teacherdetails">
     <!--Table-->
     <table class="highlight enroll-detail">
     <thead>
@@ -109,7 +116,7 @@
     </table>
     </div>
         <div class="col s9 offset-s3">
-            <table class="highlight bordered courses-details">
+            <table class="highlight bordered courses-details hide">
             <thead>
               <tr>
                   <th>Courses</th>
@@ -121,9 +128,13 @@
                     <td>Course Name</td>
                     <td>Links</td>
                 </tr>
-                <tr>
-                    <td>Enter Data here</td>
-                </tr>
+                {% for course in all_assigned_courses %}
+                    <tr>
+                        <td>{{ course.course_code }}</td>
+                        <td>{{ course.course_material }}</td>
+                        <td></td>
+                    </tr>
+                {% endfor %}
             </tbody>
             </table>
         </div>
@@ -131,9 +142,9 @@
 
     <!--  Scripts-->
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script src="js/materialize.js"></script>
-    <script src="js/init.js"></script>
-    <script src="js/StudentDetails.js"></script>
+    <script src="{% static 'portal/js/materialize.js' %}"></script>
+    <script src="{% static 'portal/js/init.js' %}"></script>
+    <script src="{% static 'portal/js/teacherdetail.js' %}"></script>
 
 </body>
 </html>
