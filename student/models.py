@@ -45,6 +45,8 @@ class Student(models.Model):
         ('pg_it', 'M.Tech.(IT)'),
     )
 
+    temp_year = str(datetime.datetime.now().year) + '-' + str(datetime.datetime.now().year + 1)[2:4]
+
     student_id = models.CharField(max_length=9, blank=True, null=True)
     name = models.CharField(max_length=30, blank=True, null=True)
     contact_number = models.CharField(max_length=10, blank=True, null=True)
@@ -53,10 +55,11 @@ class Student(models.Model):
     address = models.TextField(max_length=100, blank=True, null=True)
     blood_group = models.CharField(max_length=3, blank=True, null=True, choices=BG_CHOICES)
     application_number = models.CharField(max_length=9, blank=True, null=True)
+    academic_year = models.CharField(max_length=7, default=temp_year, null=True)
     programme = models.CharField(max_length=10, default='ug_cse', null=True, choices=PRG_CHOICES)
     gender = models.CharField(max_length=1, blank=True, null=True, choices=GENDER_CHOICES)
     social_category = models.CharField(max_length=3, default='gen', null=True, choices=CATEGORY_CHOICES)
-    email = models.CharField(max_length=100, blank=True, null=True)
+    email = models.EmailField(blank=True, null=True)
     aadhar = models.CharField(max_length=16, blank=True, null=True)
     country = CountryField(default='IN')
     state_of_origin = models.CharField(max_length=20, default='Rajasthan', null=True)
@@ -66,6 +69,12 @@ class Student(models.Model):
     qualifying_exam = models.CharField(max_length=100, blank=True,null=True)
     qualifying_exam_percentage = models.CharField(max_length=100, blank=True,null=True)
     qualifying_exam_year = models.IntegerField(choices=YEAR_CHOICES, null=True, default=datetime.datetime.now().year)
+    last_school = models.CharField(max_length=100, null=True, blank=True)
+    entrance_rank = models.CharField(max_length=6, null=True, blank=True)
+    tenth_marks = models.CharField(max_length=6, null=True, blank=True)
+    tenth_passing_year = models.IntegerField(choices=YEAR_CHOICES, null=True, default=datetime.datetime.now().year-2)
+    pincode = models.CharField(max_length=6, blank=True, null=True)
+    city = models.CharField(max_length=60, blank=True, null=True)
 
     def __str__(self):
         return self.student_id

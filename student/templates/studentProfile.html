@@ -1,0 +1,125 @@
+{% extends 'portal/base.html' %}
+{% block title %}
+    SLcM | Profile
+{% endblock %}
+{% block body %}
+	<div class="row">
+
+      <div class="col s3">
+        <!-- Navigation panel -->
+      <ul style="width:250px; margin-top:65px;" class="side-nav fixed">
+        <li class="admission-nav"><a href="#">Admission Details</a></li>
+        <li class="exam-nav"><a href="#">Qualifying Exam Details</a></li>
+        <li class="personal-nav"><a href="#">Personal Details</a></li>
+      </ul>
+      </div>
+
+      <div class="col s9">
+        <!-- Page content  -->
+        <!--Table-->
+      <table class="bordered highlight" id="admin-detail">
+        <thead>
+          <tr>
+              <center><th>Admission Details</th></center>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Enrollment Number</td>
+            <td>{{ student_profile.student_id }}</td>
+            <td>Application Number</td>
+            <td>{{ student_profile.application_number }}</td>
+          </tr>
+          <tr>
+            <td>Name</td>
+            <td>{{ student_profile.name }}</td>
+            <td>Academic Year</td>
+            <td>{{ student_profile.academic_year }}</td>
+          </tr>
+          <tr>
+            <td>Program/Branch</td>
+            <td>{{ student_profile.programme }}</td>
+            <td>Gender</td>
+            <td>{{ student_profile.gender }}</td>
+          </tr>
+          <tr>
+            <td>Mobile Number</td>
+            <td>{{ student_profile.contact_number }}</td>
+            <td>E-mail ID</td>
+            <td>{{ student_profile.email }}</td>
+          </tr>
+          <tr>
+            <td>Domicile Status</td>
+            <td>{{ student_profile.state_of_origin }}</td>
+            <td>AADHAR Number</td>
+            <td>{{ student_profile.aadhar }}</td>
+          </tr>
+        </tbody>
+      </table>
+      <table class="bordered highlight hide" id="qualify-detail">
+        <thead>
+          <tr>
+              <th>Qualifying Exam Details</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Qualifying Board / University</td>
+            <td>{{ student_profile.qualifying_board }}</td>
+            <td>School Last Studied</td>
+            <td>{{ student_profile.last_school }}</td>
+          </tr>
+          <tr>
+            <td>Qualifying Exam</td>
+            <td>{{ student_profile.qualifying_exam }}</td>
+            <td>Year of Passing</td>
+            <td>{{ student_profile.qualifying_exam_year }}</td>
+          </tr>
+          <tr>
+            <td>Exam Marks / Grades</td>
+            <td>{{ student_profile.qualifying_exam_percentage }}</td>
+            <td>Entrance Test Rank</td>
+            <td>{{ student_profile.entrance_rank }}</td>
+          </tr>
+          <tr>
+            <td>10th Marks/Grades/Points</td>
+            <td>{{ student_profile.tenth_marks }}</td>
+            <td>Year of Passing</td>
+            <td>{{ student_profile.tenth_passing_year }}</td>
+          </tr>
+        </tbody>
+      </table>
+      <table class="bordered highlight hide" id="address-detail">
+        <thead>
+          <tr>
+              <th>Address Details</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Present Address Line 1</td>
+            <td>{{ student_profile.address }}</td>
+            <td>Present Address Line 2</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Present Address Line 3</td>
+            <td></td>
+            <td>City</td>
+            <td>{{ student_profile.city }}</td>
+          </tr>
+          <tr>
+            <td>State</td>
+            <td>{{ student_profile.state_of_origin }}</td>
+            <td>Country</td>
+            <td>{{ student_profile.country }}</td>
+          </tr>
+          <tr>
+            <td>Pin Code</td>
+            <td>{{ student_profile.pincode }}</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
+{% endblock %}

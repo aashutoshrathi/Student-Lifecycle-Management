@@ -1,0 +1,129 @@
+{% extends 'portal/base.html' %}
+{% block title %}
+    SLcM | Profile
+{% endblock %}
+{% block body %}
+
+    <!--Nav Bar-->
+        <div class="row">
+
+          <div class="col s3">
+            <!-- Navigation panel -->
+          <ul style="width:250px; margin-top:65px;" class="side-nav fixed">
+            <li class="enroll-nav"><a href="#">Enrollment Details</a></li>
+            <li class="cd-nav"><a href="#">Course Details</a></li>
+            <li class="attendance-nav"><a href="#">Attendance</a></li>
+            <li class="grade-nav"><a href="#">Grades</a></li>
+          </ul>
+          </div>
+
+          <div class="col s9">
+            <!-- Page content  -->
+            <!--Table-->
+          <table class="bordered highlight" id="enroll-table">
+            <thead>
+              <tr>
+                  <th>Enrollment Details</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Roll No.</td>
+                <td>{{ student_profile.student_id }}</td>
+                <td>Application No.</td>
+                <td>{{ student_profile.application_number }}</td>
+              </tr>
+              <tr>
+                <td>Enrollment No.</td>
+                <td>{{ student_profile.application_number }}</td>
+                <td>Academic Year</td>
+                <td>{{ student_profile.academic_year }}</td>
+              </tr>
+              <tr>
+                <td>Year of Passing</td>
+                <td>{{ student_profile.qualifying_exam_year }}</td>
+                <td>Semester</td>
+                <td>{{ sem }}</td>
+              </tr>
+            </tbody>
+          </table>
+          <table class="bordered highlight hide" id="cd-table">
+            <thead>
+              <tr>
+                  <th>Course Details</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Subject Code</td>
+                <td>Subject</td>
+                <td>Subject Classification</td>
+                <td>Semester</td>
+                <td>Credits</td>
+              </tr>
+              {% for course in course_detail %}
+              <tr>
+                <td>{{ course.code }}</td>
+                <td>{{ course.name }}</td>
+                <td>{{ course.classification }}</td>
+                <td>Semester {{ course.semester }}</td>
+                <td>{{ course.credits }}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+          <table class="bordered highlight hide" id="attendance-table">
+            <thead>
+              <tr>
+                  <th>Attendance</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Academic Year</td>
+                <td>Subject</td>
+                <td>Semester</td>
+                <td>Credits</td>
+                <td>Total class</td>
+                <td>Days Absent</td>
+                <td>Attendance</td>
+              </tr>
+              {% for percent,absent,course,ignore in course_detail %}
+              <tr>
+                <td>{{ student_profile.academic_year }}</td>
+                <td>{{ course.name }}</td>
+                <td>Semester {{ course.semester }}</td>
+                <td>{{ course.credits }}</td>
+                <td>{{ course.days_given }}</td>
+                <td>{{ absent }}</td>
+                <td>{{ percent }}%</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+          <table class="bordered highlight hide" id="grade-table">
+            <thead>
+              <tr>
+                  <th>Grade</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Subject Code</td>
+                <td>Subject</td>
+                <td>Grade</td>
+              </tr>
+            {% for ignore,ignore,course,grade in course_detail %}
+            <tr>
+            <td>{{ course.code }}</td>
+            <td>{{ course.name }}</td>
+            <td>{{ grade }}</td>
+            </tr>
+            {% endfor %}
+            </tbody>
+          </table>
+          </div>
+        </div>
+
+{% endblock %}
+
