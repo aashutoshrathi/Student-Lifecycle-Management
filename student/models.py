@@ -50,7 +50,7 @@ class Student(models.Model):
     student_id = models.CharField(max_length=9, blank=True, null=True)
     name = models.CharField(max_length=30, blank=True, null=True)
     contact_number = models.CharField(max_length=10, blank=True, null=True)
-    spi = models.CharField(max_length=10, blank=True, null=True)
+    cpi = models.CharField(max_length=10, blank=True, null=True)
     guardians_number = models.CharField(max_length=10, blank=True, null=True)
     date_of_birth = models.DateField(blank=True, null=True)
     address = models.TextField(max_length=100, blank=True, null=True)
