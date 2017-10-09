@@ -8,10 +8,10 @@ function auth() {
   const password = document.querySelector('.secret').value;
   console.log(username, password);
   if (username == user && password == pass)
-    window.location = "StudentProfile.html";
+    window.location = "portal/student/profile/201651001";
 
   else if (username == tuser && password == tpass)
-      window.location = "TeacherProfile.html";
+      window.location = "portal/teacher/profile/ndr001";
 
 }
 
