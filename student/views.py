@@ -78,3 +78,30 @@ def academic_view(request, pk):
         'course_detail': course_detail,
     }
     return render(request, 'AcademicDetails.html', context=context)
+
+
+def fee_view(request, pk):
+    student_profile = get_object_or_404(Student, student_id=pk)
+
+    context = {
+        'student_profile': student_profile,
+    }
+    return render(request, 'fees.html', context=context)
+
+
+def application_view(request, pk):
+    student_profile = get_object_or_404(Student, student_id=pk)
+
+    context = {
+        'student_profile': student_profile,
+    }
+    return render(request, 'Applications.html', context=context)
+
+
+def event_view(request, pk):
+    student_profile = get_object_or_404(Student, student_id=pk)
+
+    context = {
+        'student_profile': student_profile,
+    }
+    return render(request, 'Events.html', context=context)
