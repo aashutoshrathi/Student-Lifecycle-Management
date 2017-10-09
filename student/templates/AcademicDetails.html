@@ -1,4 +1,5 @@
 {% extends 'portal/base.html' %}
+{% load staticfiles %}
 {% block title %}
     SLcM | Profile
 {% endblock %}
@@ -124,6 +125,11 @@
           </table>
           </div>
         </div>
+
+      <script src="{% static 'portal/js/jquery-2.1.1.min.js' %}"></script>
+      <script src="{% static 'portal/js/materialize.js' %}"></script>
+      <script src="{% static 'portal/js/init.js' %}"></script>
+      <script src="{% static 'portal/js/AcademicDetails.js' %}"></script>
 
 {% endblock %}
 
