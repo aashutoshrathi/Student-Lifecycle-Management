@@ -23,11 +23,11 @@
       </ul>
 
       <ul id="nav-mobile" class="side-nav">
-        <li><a href="StudentProfile.html">Student Details</a></li>
-        <li><a href="AcademicDetails.html">Academics Details</a></li>
-        <li><a href="Financials.html">Fee Status</a></li>
-        <li><a href="Applications.html">Submit Application</a></li>
-        <li><a href="Events.html">Event Calendar</a></li>
+        <li><a href="/portal/student/profile/{{ student_profile.student_id }}">Student Details</a></li>
+        <li><a href="/portal/student/detail/{{ student_profile.student_id }}">Academics Details</a></li>
+        <li><a href="/portal/student/fees/{{ student_profile.student_id }}">Fee Status</a></li>
+        <li class="active"><a href="/portal/student/applications/{{ student_profile.student_id }}">Submit Application</a></li>
+        <li><a href="/portal/student/event/{{ student_profile.student_id }}">Event Calendar</a></li>
       </ul>
       <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
     </div>
