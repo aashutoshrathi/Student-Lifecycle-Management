@@ -11,7 +11,7 @@ function auth() {
     window.location = "portal/student/profile/201651031";
 
   else if (username == tuser && password == tpass)
-      window.location = "ndr001.html";
+      window.location = "portal/teacher/profile/ndr001/";
 
 }
 

@@ -53,7 +53,7 @@
           <div class="card" style="width: 170%">
             <div class="card-image">
               <img src="http://plugins.dreamcss.com/wp-content/uploads/2016/01/Materialize.png">
-              <span class="card-title center-align">Name</span>
+              <span class="card-title center-align">{{ teacher.name }}</span>
             </div>
             <div class="card-content">
 				<span class="univ">{{ teacher.alma_mater }}<span class="country">({{ teacher.country }})</span></span>
@@ -61,8 +61,8 @@
             <div class="card-action">
               <a href="{{ teacher.linked_in }}"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
 			  <a href="{{ teacher.google_scholars }}"><i class="fa fa-google" aria-hidden="true"></i></a>
-			  <a href="{{ teacher.email }}"><i class="fa fa-envelope" aria-hidden="true"></i></a>
-              <a href="{{ teacher.contact_number }}"><i class="fa fa-phone" aria-hidden="true"></i></a>
+			  <a href="mailto:{{ teacher.email }}"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+              <a href="tel:{{ teacher.contact_number }}"><i class="fa fa-phone" aria-hidden="true"></i></a>
             </div>
           </div>
         </div>
