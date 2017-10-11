@@ -65,7 +65,7 @@
               {% for percent, absent, course, grade in course_detail %}
               <tr>
                 <td>{{ course.code }}</td>
-                <td>{{ course.name }}</td>
+                <td><a href="{% url 'course_view' course.code %}">{{ course.name }}</a></td>
                 <td>{{ course.classification }}</td>
                 <td>Semester {{ course.semester }}</td>
                 <td>{{ course.credits }}</td>
