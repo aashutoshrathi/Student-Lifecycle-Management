@@ -2,7 +2,10 @@
 
 [![Build Status](https://travis-ci.org/aashutoshrathi/Student-Lifecycle-Management.svg?branch=master)](https://travis-ci.com/aashutoshrathi/Student-Lifecycle-Management)
 
-Student Portal for Colleges.
+> Django based student portal for institutes built for hackathon'17 held at IIITV.
+
+## Clients
+An electron based desktop app which uses this in it's renderer process is [here](https://github.com/anshumanv/Student-Lifecycle-Management-Desktop).
 
 ## Developement
 ```sh
