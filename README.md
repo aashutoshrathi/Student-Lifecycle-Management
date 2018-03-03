@@ -1,19 +1,23 @@
 # Student Lifecycle Management
 
 [![Build Status](https://travis-ci.org/aashutoshrathi/Student-Lifecycle-Management.svg?branch=master)](https://travis-ci.com/aashutoshrathi/Student-Lifecycle-Management)
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/Django.svg) 
+![PyPI - Django Version](https://img.shields.io/pypi/djversions/djangorestframework.svg)
+![PyPI - Status](https://img.shields.io/pypi/status/Django.svg)
 
-> Django based student portal for institutes built for hackathon'17 held at IIITV.
+
+> Django based student portal for institutes built for Hackathon'17 held at IIIT Vadodara .
 
 ## Clients
 An electron based desktop app which uses this in it's renderer process is [here](https://github.com/anshumanv/Student-Lifecycle-Management-Desktop).
 
 ## Developement
 ```sh
-$ pip install -r requirements.txt
+$ sudo pip3 install -r requirements.txt
 $ python3 manage.py runserver
 ```
 
-## Author
+## Author ✍️
 
 <details>
 	<summary>Team  M<sup>2</sup>A<sup>3</sup></summary>
